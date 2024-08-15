@@ -15,9 +15,9 @@ export default function Home() {
         <QuoteCard />
         <JokeCard />
         <FactCard />
-        <WeatherWidget />
         <RiddleCard />
       </div>
+      <WeatherWidget />
     </div>
   );
 }

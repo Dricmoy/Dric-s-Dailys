@@ -1,55 +1,38 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
-export default function WeatherWidget (){
-  const [weather, setWeather] = useState<any>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-
+const WeatherWidget: React.FC = () => {
   useEffect(() => {
-    const fetchWeather = async (lat: number, lon: number) => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          `https://api.api-ninjas.com/v1/weather?lat=${lat}&lon=${lon}`,
-          {
-            headers: { 'X-Api-Key': process.env.NEXT_PUBLIC_API_NINJA_KEY || '' },
-          }
-        );
-        const data = await response.json();
-        setWeather(data);
-      } catch (error) {
-        console.error('Error fetching weather:', error);
-      } finally {
-        setLoading(false);
+    // Load the weather widget script
+    const script = document.createElement('script');
+    script.src = 'https://weatherwidget.io/js/widget.min.js';
+    script.async = true;
+    script.id = 'weatherwidget-io-js';
+    document.body.appendChild(script);
+
+    // Cleanup the script on component unmount
+    return () => {
+      const existingScript = document.getElementById('weatherwidget-io-js');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
       }
     };
-
-    const getLocation = () => {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          fetchWeather(position.coords.latitude, position.coords.longitude);
-        },
-        (error) => {
-          console.error('Error getting location:', error);
-          setLoading(false);
-        }
-      );
-    };
-
-    getLocation();
   }, []);
 
   return (
     <div className="bg-white shadow-md rounded-lg p-4">
-      <h2 className="text-lg font-semibold mb-2">Weather</h2>
-      {loading ? (
-        <p>Loading...</p>
-      ) : weather ? (
-        <p>{`${weather.city}, ${weather.state}: ${weather.temp}°C, ${weather.conditions}`}</p>
-      ) : (
-        <p>Could not fetch weather data.</p>
-      )}
+      <h2 className="text-lg font-semibold mb-2">Weather Widget</h2>
+      <a
+        className="weatherwidget-io"
+        href="https://forecast7.com/en/53d54n113d49/edmonton/"
+        data-label_1="EDMONTON"
+        data-label_2="WEATHER"
+        data-theme="original"
+      >
+        EDMONTON WEATHER
+      </a>
     </div>
   );
 };
 
+export default WeatherWidget;
