@@ -1,3 +1,31 @@
+## 📚 A Personal Web App for Daily Fun and Inspiration
+
+Welcome to **Daily's by Dric**, a unique web application designed to bring a daily dose of trivia, quotes, jokes, facts, and riddles. Dive in and enjoy engaging content tailored just for me! 😄
+This app will grow and develop along with me
+
+![Daily's by Dric Banner](https://via.placeholder.com/1200x400.png?text=Daily's+by+Dric) 
+
+[![Build Status](https://img.shields.io/github/workflow/status/your-username/dailys-by-dric/Build)](https://github.com/your-username/dailys-by-dric/actions)
+[![Version](https://img.shields.io/github/v/release/your-username/dailys-by-dric)](https://github.com/your-username/dailys-by-dric/releases)
+
+---
+
+## Features
+
+- **Trivia**: Random trivia questions.
+- **Quotes**: Inspiring daily quotes.
+- **Jokes**: Light-hearted jokes.
+- **Facts**: Fun and interesting facts.
+- **Riddles**: Brain-teasing challenges.
+- **Resizable Widgets**: Dynamic and interactive components.
+
+## Technologies Used
+
+- **Next.js**
+- **React**
+- **Tailwind CSS**
+- **ShadCN UI**
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
