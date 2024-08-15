@@ -15,7 +15,6 @@ export default function Home() {
         <FactCard />
 
         <div
-          loading="lazy"
           data-mc-src="dcf18822-f367-4789-b268-cdab50fa9259#youtube"></div>
                 
         <script 
