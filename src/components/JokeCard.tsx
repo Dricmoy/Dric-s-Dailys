@@ -1,4 +1,4 @@
-// components/JokeCard.tsx
+'use client'
 import { useState, useEffect } from 'react';
 
 const JokeCard = () => {
@@ -10,7 +10,7 @@ const JokeCard = () => {
       setLoading(true);
       try {
         const response = await fetch('https://api.api-ninjas.com/v1/jokes', {
-          headers: { 'X-Api-Key': 'YOUR_API_KEY' },
+          headers: { 'X-Api-Key': process.env.NEXT_PUBLIC_API_NINJA_KEY || '' },
         });
         const data = await response.json();
         setJoke(data[0].joke);

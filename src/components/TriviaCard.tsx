@@ -1,7 +1,7 @@
-// components/TriviaCard.tsx
+'use client'
 import { useState, useEffect } from 'react';
 
-const TriviaCard = () => {
+export default function TriviaCard() {
   const [trivia, setTrivia] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -10,7 +10,7 @@ const TriviaCard = () => {
       setLoading(true);
       try {
         const response = await fetch('https://api.api-ninjas.com/v1/trivia', {
-          headers: { 'X-Api-Key': 'YOUR_API_KEY' },
+          headers: { 'X-Api-Key': process.env.NEXT_PUBLIC_API_NINJA_KEY || '' },
         });
         const data = await response.json();
         setTrivia(data[0].question);
@@ -34,6 +34,4 @@ const TriviaCard = () => {
       )}
     </div>
   );
-};
-
-export default TriviaCard;
+}
