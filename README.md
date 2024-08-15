@@ -18,6 +18,7 @@ This app will grow and develop along with me
 - **Facts**: Fun and interesting facts.
 - **Riddles**: Brain-teasing challenges.
 - **Resizable Widgets**: Dynamic and interactive components.
+- **Youtube Feed**: Only for based @theprimegen viewers.
 
 ## Technologies Used
 
